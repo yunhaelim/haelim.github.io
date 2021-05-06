@@ -1,0 +1,161 @@
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>현수림 후암동 하우스</title>
+                <meta property="og:title" content="현수림의 후암 러브하우스"/>
+                <meta property="og:description" content="최고기의 고기파티"/>
+                <meta property="og:image" content="image.jpeg"/>
+                <link rel="preconnect" href="https://fonts.gstatic.com">
+                <link href="https://fonts.googleapis.com/css2?family=Cute+Font&display=swap" rel="stylesheet">
+
+                <style>
+
+                    *{
+                    font-family: 'Cute Font', cursive;
+                    }
+
+                    .mytitle{
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        margin-top: 30px;
+                    }
+
+                    .btn{
+                        width: 300px;
+                        height: 40px;
+                        border: 2px solid #e8344e;
+                        text-decoration: none;
+                        text-align: center;
+                        line-height: 40px;
+                        color: #e8344e;
+                        font-weight: bold;
+                        border-radius: 40px;
+
+                    }
+
+                    .btn:hover {
+                        background-color: #e8344e;
+                        color: cornsilk;
+                    }
+
+                    .box{
+                        width: 1000px;
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        justify-content: center;
+                        margin: 40px auto 0px auto;
+                    }
+
+                    .map{
+                        width: 500px;
+                        height: 500px;
+                        margin-right: 30px;    
+                        border-radius: 24px;    
+                    }
+
+                    .story{
+                        width: 450px;
+                        height: 500px;
+                    }
+
+                    .img{
+                        width: 450px;
+                        height: 300px;
+                        background-image: url('image.jpeg');
+                        background-position: center;
+                        background-size: cover;
+                        border-radius: 24px;
+                    }
+
+                    .story>h2{
+                        margin: 20px 0px 0px 0px;
+                        color:royalblue;
+                    }
+
+                    .story>h3{
+                        margin: 5px 0px 0px 0px;
+                        font-size: 16px;
+                        color:royalblue;
+                        font-weight: normal;    
+                    }
+
+                    .story>p{
+                        line-height: 24px ;
+                        font-size: 13px;
+                        color:rgb(93, 97, 100);
+                        font-weight: normal; 
+                    }
+                    @media screen and (max-width: 640px) {
+                        h1{
+                            font-size: 26px;
+                        }
+                        .box{
+                            flex-direction: column;
+                            width: 100%;
+                        }
+                        .map{
+                        width: 100%;
+                        height: 200px;
+                        margin: 0;    
+                        }
+                        .story{
+                        width: 100%;
+                        height: auto;
+                        margin-top: 10px;
+                        margin-bottom: 20px;
+                        }
+                        .img{
+                        width: 100%;
+                        height: 200px;
+                        }
+                    }
+                </style>
+            </head>
+            <body>
+                <div class="mytitle">
+                    <h1> 현수림 후암동 하우스 소개</h1>
+                    <a class="btn" href="https://map.naver.com/v5/search/%ED%9B%84%EC%95%94%EB%8F%9927-27/address/14135074.516121145,4516136.330746688,%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C%20%EC%9A%A9%EC%82%B0%EA%B5%AC%20%ED%9B%84%EC%95%94%EB%8F%99%2027-27,jibun?c=14135044.3030115,4516141.7065596,19,0,0,0,dh" target="_blank">현수림하우스 위치보기</a>
+                </div>
+                <div class="box">
+                    <div class="map" id="map">
+
+                    </div>
+                    <div class="story">
+                        <div class="img">
+
+                        </div>
+                        <h2>현수림 본진</h2>
+                        <h3>서울시 용산구 후암동 27-27번지 3층</h3>
+                        <p>윤혜림과 최현수의 러브하우스 3층에서 고기를 굽고있는 최고기고기고기고기고기고기고기고기고기고기고기고기고기고기</p>
+                    </div>
+                </div>
+                <script type="text/javascript" src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=535068688f1a8bca1c21a9445ede0a89"></script>
+            <script>
+                var markerPosition = new kakao.maps.LatLng(37.55069361655093, 126.97752303346185)
+                var mapContainer = document.getElementById('map'), // 지도를 표시할 div  
+                    mapOption = { 
+                        center: markerPosition, // 지도의 중심좌표
+                        level: 3 // 지도의 확대 레벨
+                    };
+
+                var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+
+                var imageSrc = "https://s3.ap-northeast-2.amazonaws.com/materials.spartacodingclub.kr/2021_05_free_parents/sparta-marker.png"; 
+                var imageSize = new kakao.maps.Size(65, 86); 
+                var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize); 
+                
+                var marker = new kakao.maps.Marker({
+                    map: map,
+                    position: markerPosition,
+                    image : markerImage
+                });
+
+            </script>
+            </body>
+            </html>
